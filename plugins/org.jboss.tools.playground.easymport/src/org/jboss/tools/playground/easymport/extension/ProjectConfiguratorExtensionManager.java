@@ -12,17 +12,12 @@ import org.eclipse.core.expressions.EvaluationResult;
 import org.eclipse.core.expressions.Expression;
 import org.eclipse.core.expressions.ExpressionConverter;
 import org.eclipse.core.expressions.IEvaluationContext;
-import org.eclipse.core.internal.expressions.ExpressionPlugin;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.internal.services.EvaluationReference;
-import org.eclipse.ui.services.IEvaluationReference;
-import org.eclipse.ui.services.IEvaluationService;
 import org.jboss.tools.playground.easymport.Activator;
 import org.jboss.tools.playground.easymport.expression.FileExpressionHandler;
 
@@ -30,15 +25,12 @@ import org.jboss.tools.playground.easymport.expression.FileExpressionHandler;
 public class ProjectConfiguratorExtensionManager {
 
 	private static final String EXTENSION_POINT_ID = Activator.PLUGIN_ID + ".projectConfigurators"; //$NON-NLS-1$
-
-	private static ProjectConfiguratorExtensionManager INSTANCE;
 	
 	private IConfigurationElement[] extensions;
 	private ExpressionConverter expressionConverter;
 	private Map<IConfigurationElement, ProjectConfigurator> configuratorsByExtension = new HashMap<IConfigurationElement, ProjectConfigurator>();
 	
 	/**
-	 * Made private to have a singleton.
 	 * Each instance of this class will have it's own internal registry, that will load (maximum) once each extension class,
 	 * depending on whether the extension has been active for one case handled by this Manager.
 	 */

@@ -4,8 +4,8 @@ Bundle-Name: Easymport :: Java EE support
 Bundle-SymbolicName: org.jboss.tools.playground.easymport.jee;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: JBoss, by Red Hat
-Require-Bundle: org.jboss.tools.playground.easymport,
- org.jboss.tools.playground.easymport.java,
+Require-Bundle: org.eclipse.e4.ui.importer,
+ org.eclipse.e4.ui.importer.java,
  org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
