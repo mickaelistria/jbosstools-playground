@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="scopeBuilder"
+         name="%scopeBuilder.label"
+         point="org.eclipse.core.resources.builders">
+      <builder>
+         <run
+               class="org.jboss.tools.playground.scope.ScopeValidator">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="scope"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.jdt.core.buildpath_problem">
+      </super>
+   </extension>
+
+</plugin>
